@@ -19,5 +19,5 @@ posts = "   ID#   \t# of posts\tPost Title/Text\n"
 for post in table:
   posts += "%s\t%s\t%s\n" % (post[0], post[3], post[2])
 
-with open("4chin.txt", "w") as f:
+with open("4chin.txt", "w", "utf-8") as f:
   f.write(posts)
