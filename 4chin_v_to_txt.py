@@ -15,9 +15,9 @@ table = map(
     soup.table.find_all("tr")[1:]
     )
 table = [ row for row in table if int(row[3])>=100 ]
-posts = ""
+posts = "   ID#   \t# of posts\tPost Title/Text\n"
 for post in table:
-  posts += "%s\t%s\n" % (post[0], post[2])
+  posts += "%s\t%s\t%s\n" % (post[0], post[3], post[2])
 
 with open("4chin.txt", "w") as f:
   f.write(posts)
