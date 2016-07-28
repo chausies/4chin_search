@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup as BS
 from os import popen
+import codecs
 
 try:
   html = html = popen("curl http://boards.4chan.org/v/archive").read()
@@ -19,5 +20,5 @@ posts = "   ID#   \t# of posts\tPost Title/Text\n"
 for post in table:
   posts += "%s\t%s\t%s\n" % (post[0], post[3], post[2])
 
-with open("4chin.txt", "w", "utf-8") as f:
+with codecs.open("4chin.txt", "w", "utf-8") as f:
   f.write(posts)
